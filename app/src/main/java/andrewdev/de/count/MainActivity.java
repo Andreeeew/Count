@@ -77,74 +77,16 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onResume() {
-        //textView1.setText(getTextFile());
         textView1.setText(String.valueOf(howManyTimesBeenClicked));
         super.onResume();
     }
 
     @Override
     protected void onPause() {
+        saveCount();
         super.onPause();
-        //saveTextFile(textView1.getText().toString());
     }
-
-    /*public String getTextFile() {
-
-        FileInputStream fileInputStream = null;
-        String fileData = null;
-
-        try{
-            fileInputStream = openFileInput(DATA_FILE);
-            int size = fileInputStream.available();
-            byte[] buffer = new byte[size];
-            fileInputStream.read(buffer);
-            fileInputStream.close();
-            fileData = new String(buffer,"UTF-8");
-        }catch (FileNotFoundException e){
-            Log.e("FILE", "Not found");
-            e.printStackTrace();
-        }catch (IOException e){
-            Log.e("File","Error");
-            e.printStackTrace();
-        }finally {
-            try {
-                if (fileInputStream != null){
-                    fileInputStream.close();
-                }
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-        }
-        return fileData;
-
-    }
-
-    public void saveTextFile(String content) {
-
-        FileOutputStream fileOutputStream = null;
-
-        try {
-            fileOutputStream = openFileOutput(DATA_FILE, Context.MODE_PRIVATE);
-            fileOutputStream.write(content.getBytes());
-        }catch (FileNotFoundException e){
-            Log.e("FILE","Not found");
-            e.printStackTrace();
-        }catch (IOException e){
-            Log.e("FILE","Error");
-            e.printStackTrace();
-        }finally {
-            try {
-                if (fileOutputStream != null){
-                    fileOutputStream.close();
-                }
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-        }
-
-    }
-    */
-
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
