@@ -34,16 +34,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Create Buttons, TextViews, Pictures.....
         button1 = (Button) findViewById(R.id.button);
         reset = (Button) findViewById(R.id.button2);
         textView1 = (TextView) findViewById(R.id.textView);
 
         sharedPreferences = getSharedPreferences("Klick",Context.MODE_PRIVATE);
         howManyTimesBeenClicked = sharedPreferences.getInt("klick_1", 0);
-        //SharedPreferences.Editor editor = sharedPreferences.edit();
-        //editor.putInt(NUMBER_OF_TIMES_RUN_KEY, howManyTimesBeenClicked);
-        //editor.commit();
-
+       
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
