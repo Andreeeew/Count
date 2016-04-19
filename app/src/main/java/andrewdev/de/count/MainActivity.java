@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button1;
     private Button reset;
     private int howManyTimesBeenClicked = 0;
-    private static final String NUMBER_OF_TIMES_RUN_KEY = "NUMBER_OF_TIMES_RUN_KEY";
+    private static final String NUMBER_OF_TIMES_CLICK_KEY = "NUMBER_OF_TIMES_CLICK_KEY";
     private SharedPreferences sharedPreferences;
 
     @Override
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         if(howManyTimesBeenClicked == 0){
-            Toast.makeText(this, "Welcome Andrew :D", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Welcome :D", Toast.LENGTH_LONG).show();
         }
 
         textView1.setText(String.valueOf(howManyTimesBeenClicked));
